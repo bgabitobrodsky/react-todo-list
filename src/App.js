@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import './App.css';
 
 //importando child components al parent compoenent
 import {TodoBanner} from "./TodoBanner.js";

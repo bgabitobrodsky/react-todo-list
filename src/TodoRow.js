@@ -2,12 +2,16 @@ import React, {Component} from 'react';
 
 export class TodoRow extends Component{
 
-    render =()=>
-        <tr className={this.props.item.done? "bg-success" : "bg-danger"} key={this.props.item.action}>
-            <td>{this.props.item.action}</td>
-            <td> <input type="checkbox" checked={this.props.item.done} 
-                    onChange={()=> this.props.callback(this.props.item)}/> 
+    render(){
+        const {item,callback} = this.props;
+        return(
+        <tr className={item.done? "bg-success" : "bg-danger"} key={item.action}>
+            <td>{item.action}</td>
+            <td> <input type="checkbox" checked={item.done} 
+                    onChange={()=> callback(item)}/> 
             </td>
         </tr>
-    
+
+        );
+    }    
 }
